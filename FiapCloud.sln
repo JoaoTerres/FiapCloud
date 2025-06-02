@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiapCloud.Api", "FiapCloud.Api\FiapCloud.Api.csproj", "{8580E5BD-7957-4129-B778-A8FB8F554E7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FIapCloud.App", "FIapCloud.App\FIapCloud.App.csproj", "{9A42C8C9-9721-451E-B29E-D2510A71C969}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiapCloud.Infra", "FiapCloud.Infra\FiapCloud.Infra.csproj", "{2627768F-B27D-4D8D-98A2-8C4BDE476A76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiapCLoud.Domain", "FiapCLoud.Domain\FiapCLoud.Domain.csproj", "{6A6D68A9-FCA1-4D7B-B79D-EAF31B790D5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiapCloud.Tests", "FiapCloud.Tests\FiapCloud.Tests.csproj", "{667CF711-18E3-4D55-9496-F911E84EF558}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8580E5BD-7957-4129-B778-A8FB8F554E7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8580E5BD-7957-4129-B778-A8FB8F554E7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8580E5BD-7957-4129-B778-A8FB8F554E7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8580E5BD-7957-4129-B778-A8FB8F554E7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A42C8C9-9721-451E-B29E-D2510A71C969}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A42C8C9-9721-451E-B29E-D2510A71C969}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A42C8C9-9721-451E-B29E-D2510A71C969}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A42C8C9-9721-451E-B29E-D2510A71C969}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2627768F-B27D-4D8D-98A2-8C4BDE476A76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2627768F-B27D-4D8D-98A2-8C4BDE476A76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2627768F-B27D-4D8D-98A2-8C4BDE476A76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2627768F-B27D-4D8D-98A2-8C4BDE476A76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A6D68A9-FCA1-4D7B-B79D-EAF31B790D5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A6D68A9-FCA1-4D7B-B79D-EAF31B790D5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A6D68A9-FCA1-4D7B-B79D-EAF31B790D5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A6D68A9-FCA1-4D7B-B79D-EAF31B790D5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{667CF711-18E3-4D55-9496-F911E84EF558}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{667CF711-18E3-4D55-9496-F911E84EF558}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{667CF711-18E3-4D55-9496-F911E84EF558}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{667CF711-18E3-4D55-9496-F911E84EF558}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
