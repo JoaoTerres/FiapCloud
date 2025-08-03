@@ -23,4 +23,4 @@ jobs:
         run: dotnet build FiapCloud.sln --configuration Release --no-restore
 
       - name: Test
-        run: dotnet test FiapCloud.Tests/FiapCloud.Tests.csproj --no-build --verbosity normal
+        run: dotnet test FiapCloud.Tests\FiapCloud.Tests.csproj --no-build --verbosity normal
