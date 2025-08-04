@@ -2,3 +2,4 @@ bin/
 obj/
 www/
 .vscode
+/FiapCloud.Api/appsettings.json
