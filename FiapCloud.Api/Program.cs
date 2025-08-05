@@ -59,6 +59,9 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+app.MapGet("/", () => Results.Ok("🚀 FiapCloud API rodando com sucesso!"));
+
+
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
