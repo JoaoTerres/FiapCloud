@@ -25,7 +25,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Docker Build
-        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/fiapcloud:latest .
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/fiapcloud-api:latest .
 
       - name: Docker Push
         run: docker push ${{ secrets.DOCKER_USERNAME }}/fiapcloud:latest
