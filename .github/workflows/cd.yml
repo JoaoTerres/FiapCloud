@@ -33,8 +33,9 @@ jobs:
 
       - name: Run application to execute seed
         run: dotnet run --project FiapCloud.Api/FiapCloud.Api.csproj --no-build
-
-
+        env:
+          ConnectionStrings__DefaultConnection: ${{ secrets.AZURE_DB_CONNECTION_STRING }}
+        
       - name: Docker Login
         uses: docker/login-action@v3
         with:
