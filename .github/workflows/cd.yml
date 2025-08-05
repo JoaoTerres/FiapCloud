@@ -25,7 +25,7 @@ jobs:
         run: dotnet publish FiapCloud.Api/FiapCloud.Api.csproj -c Release -o out
 
       - name: Apply EF Core Migrations
-        run: dotnet ef database update --project FiapCloud.Api/FiapCloud.Api.csproj --startup-project FiapCloud.Api/FiapCloud.Api.csproj
+        run: dotnet ef database update --project FiapCloud.Infra/FiapCloud.Infra.csproj --startup-project FiapCloud.Api/FiapCloud.Api.csproj
         env:
           ConnectionStrings__DefaultConnection: ${{ secrets.AZURE_DB_CONNECTION_STRING }}
 
