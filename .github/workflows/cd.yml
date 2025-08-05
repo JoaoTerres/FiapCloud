@@ -11,12 +11,23 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+
       - uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '8.0.405'
 
+      - name: Install EF Core CLI
+        run: |
+          dotnet tool install --global dotnet-ef
+          echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
+
       - name: Publish
         run: dotnet publish FiapCloud.Api/FiapCloud.Api.csproj -c Release -o out
+
+      - name: Apply EF Core Migrations
+        run: dotnet ef database update --project FiapCloud.Infra/FiapCloud.Infra.csproj --startup-project FiapCloud.Api/FiapCloud.Api.csproj
+        env:
+          ConnectionStrings__DefaultConnection: ${{ secrets.AZURE_DB_CONNECTION_STRING }}
 
       - name: Docker Login
         uses: docker/login-action@v3
@@ -35,4 +46,4 @@ jobs:
         with:
           app-name: fiapcloud-app
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          images: '${{ secrets.DOCKER_USERNAME }}/fiapcloud:latest'
+          images: '${{ secrets.DOCKER_USERNAME }}/fiapcloud-api:latest'
