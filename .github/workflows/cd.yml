@@ -1,0 +1,38 @@
+name: CD - Deploy FiapCloud
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.405'
+
+      - name: Publish
+        run: dotnet publish FiapCloud.Api/FiapCloud.Api.csproj -c Release -o out
+
+      - name: Docker Login
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Docker Build
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/fiapcloud-api:latest .
+
+      - name: Docker Push
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/fiapcloud-api:latest
+
+      - name: Azure Deploy
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: fiapcloud-app
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          images: '${{ secrets.DOCKER_USERNAME }}/fiapcloud:latest'
