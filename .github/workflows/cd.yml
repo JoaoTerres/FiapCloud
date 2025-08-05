@@ -28,7 +28,7 @@ jobs:
         run: docker build -t ${{ secrets.DOCKER_USERNAME }}/fiapcloud-api:latest .
 
       - name: Docker Push
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/fiapcloud:latest
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/fiapcloud-api:latest
 
       - name: Azure Deploy
         uses: azure/webapps-deploy@v2
